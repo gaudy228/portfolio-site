@@ -3,6 +3,8 @@
 Сайт-визитка, который рассказывает о процессе собственного создания
 с помощью агента OpenCode.
 
+## Ссылка
+https://ВАШ_НИК.github.io/portfolio-site/
 
 ## Стек
 HTML, CSS, JavaScript, GitHub Pages.
