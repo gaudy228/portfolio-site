@@ -236,3 +236,62 @@ body {
         font-size: 1.6rem;
     }
 }
+
+@media (max-width: 360px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 0.9rem;
+    }
+
+    .header {
+        padding: 1.5rem 0 0.75rem;
+    }
+
+    .site-title {
+        font-size: 1.3rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 2rem 0;
+    }
+
+    .hero-headline {
+        font-size: 1.6rem;
+    }
+
+    .hero-btn {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .timeline-list,
+    .stack-list,
+    .tools-list,
+    .footer-list {
+        gap: 0.9rem;
+    }
+
+    .timeline-item,
+    .stack-card,
+    .tools-item,
+    .footer-item {
+        padding: 1rem;
+    }
+
+    .timeline-number {
+        width: 1.4rem;
+        height: 1.4rem;
+        font-size: 0.8rem;
+        top: -0.7rem;
+    }
+}
