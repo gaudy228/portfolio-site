@@ -186,6 +186,43 @@ body {
     color: var(--muted);
 }
 
+.footer {
+    padding: 2rem 0 3rem;
+    border-top: 1px solid rgba(79, 156, 255, 0.3);
+}
+
+.footer-title {
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.footer-label {
+    color: var(--muted);
+}
+
+.footer-link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .site-title {
         font-size: 1.5rem;
