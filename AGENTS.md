@@ -1,34 +1,29 @@
 # AGENTS.md
 
-## Цель
-Сайт-визитка о процессе создания самого сайта с помощью агента OpenCode.
-Проект рассказывает, как ИИ-агент помогал писать код шаг за шагом.
+## Overview
+Static "how this site was built with OpenCode" landing page (HTML, CSS, JS). No build, no backend, no paid services.
 
-## Стек
-HTML, CSS, JavaScript. Без сборки, без платных сервисов, без backend.
+## Structure
+- Index.html — markup
+- style.css — styles
+- script.js — timeline interactivity (opens on click)
+- TZ.md — technical spec/roadmap
+- README.md — brief summary
 
-## Команды
-Открывать через Live Server (правый клик по index.html → Open with Live Server).
+## Constraints
+- Minimalism, dark theme, single accent color only. Don't add themes/animations unless specified.
+- No external libraries, fonts, or CDNs without explicit approval.
+- No paid APIs/services.
+- Don't rename/remove existing files without confirmation.
 
-## Структура
-- index.html — разметка
-- style.css — стили
-- script.js — интерактив (временная шкала)
-- TZ.md — техническое задание
-- AGENTS.md — правила для агента
+## Workflow
+- Work one task at a time.
+- After changes, verify in browser (use Live Server on Index.html) and check console for errors.
+- If layout breaks, revert and narrow scope.
+- Commit after each completed task with a clear message.
 
-## Правила
-- Делать одну задачу за раз.
-- Не добавлять платные API и сервисы.
-- Не подключать внешние библиотеки без согласования.
-- После изменения проверять в браузере.
-- После каждой задачи делать коммит.
-- Не удалять файлы без подтверждения.
-- Если ломается вёрстка — откатить и сузить задачу.
-- Стиль: минимализм, тёмная тема, один акцентный цвет.
-
-## Definition of Done
-- Открывается локально.
-- Нет ошибок в консоли.
-- Работает на телефоне.
-- Коммит с понятным сообщением.
+## DoD
+- Loads locally via Live Server, no console errors.
+- Responsive on mobile.
+- Timeline works as specified (click to expand/collapse).
+- Matches constraints and passes manual check.
