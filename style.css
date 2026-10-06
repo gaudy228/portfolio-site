@@ -128,6 +128,36 @@ body {
     border-top: 1px solid rgba(161, 161, 170, 0.2);
 }
 
+.stack {
+    padding: 2rem 0 4rem;
+}
+
+.stack-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.stack-card {
+    border: 1px solid rgba(79, 156, 255, 0.4);
+    padding: 1.25rem;
+    border-radius: 6px;
+}
+
+.stack-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stack-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.stack-desc {
+    color: var(--muted);
+}
+
 @media (max-width: 600px) {
     .site-title {
         font-size: 1.5rem;
