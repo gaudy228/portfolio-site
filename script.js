@@ -1,14 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.timeline-item');
 
-    items.forEach(item => {
+    const details = [
+        'Сформулировал идею и зафиксировал требования в ТЗ.',
+        'Разбил задачу на конкретные пункты в бэклоге TZ.md.',
+        'Создал репозиторий, добавил AGENTS.md и базовые файлы.',
+        'Написал HTML-разметку и CSS-стили для тёмной темы.',
+        'Реализовал интерактивное раскрытие шагов в JS.',
+        'Протестировал на мобильном, поправил отступы и размеры.',
+        'Опубликовал на GitHub Pages, проверил работоспособность.',
+    ];
+
+    items.forEach((item, index) => {
         item.setAttribute('tabindex', '0');
         item.setAttribute('role', 'button');
         item.setAttribute('aria-expanded', 'false');
 
         const detail = document.createElement('p');
         detail.className = 'timeline-detail';
-        detail.textContent = 'Подробнее: шаг реализован по плану из бэклога TZ.md.';
+        detail.textContent = details[index] || 'Подробности по шагу.';
         detail.hidden = true;
         item.appendChild(detail);
 
