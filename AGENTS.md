@@ -4,11 +4,12 @@
 Static "how this site was built with OpenCode" landing page. Vanilla HTML, CSS and JavaScript only. No build step, no backend, no paid services.
 
 ## Structure
-- Index.html — markup (header, hero, timeline, stack, tools, game, ai-story, tool, footer)
-- style.css — design system, layout, animations, game, story and tool styles
+- Index.html — markup (header, hero, timeline, stack, tools, game, ai-story, tool, follow, footer)
+- style.css — design system, layout, animations, game, story, tool and follow styles
 - script.js — timeline interactivity and scroll-reveal animations
 - game.js — tic-tac-toe vs bot logic (minimax)
 - tool.js — TZ builder: live preview, clipboard copy and TZ.md download
+- follow.js — cursor-follow glow and tool icons with per-icon lag
 - TZ.md — technical spec/roadmap
 - README.md — brief summary
 
@@ -33,6 +34,7 @@ Static "how this site was built with OpenCode" landing page. Vanilla HTML, CSS a
 - `#game` — tic-tac-toe vs bot (player X, bot O, minimax hard by default, score series).
 - `#ai-story` — short story about how the AI agent built the game (prompt, process, failures, result, takeaway).
 - `#tool` — TZ builder with live formula preview, clipboard copy and TZ.md download.
+- `#follow` — "Агент всегда рядом": cursor-follow glow and 5 tool icons with different lag.
 
 ## DoD
 - Loads locally via Live Server, no console errors.
@@ -41,5 +43,6 @@ Static "how this site was built with OpenCode" landing page. Vanilla HTML, CSS a
 - Timeline works as specified (click to expand/collapse).
 - Game: hard bot is unbeatable, moves are blocked while bot "thinks", scores persist until reset.
 - Tool: live preview, copy and TZ.md download work without external APIs.
+- Follow: glow and 5 icons follow the cursor only inside `#follow`; disabled on mobile and reduced motion.
 - Lighthouse Performance stays at or above 85.
 - Matches constraints and passes manual check.
