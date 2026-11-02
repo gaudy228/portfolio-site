@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Как я сделал этот сайт с помощью ИИ-агента</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <h1 class="site-title">Как я сделал этот сайт с помощью ИИ-агента</h1>
-            <p class="site-subtitle">Сайт-визитка о процессе создания с OpenCode</p>
+        <div class="container header-inner">
+            <div class="header-text">
+                <h1 class="site-title">Как я сделал этот сайт с помощью ИИ-агента</h1>
+                <p class="site-subtitle">Сайт-визитка о процессе создания с OpenCode</p>
+            </div>
+            <nav class="site-nav" aria-label="Разделы сайта">
+                <a class="site-nav-link" href="#how">Как это сделано</a>
+                <a class="site-nav-link" href="#game">Игра</a>
+                <a class="site-nav-link" href="#ai-story">История</a>
+                <a class="site-nav-link" href="#tool">ТЗ</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero reveal">
             <div class="container">
                 <h2 class="hero-headline">Путь от идеи до результата</h2>
                 <p class="hero-subheadline">За 2 минуты узнайте, как ИИ-агент помогал писать код шаг за шагом</p>
@@ -23,7 +32,7 @@
             </div>
         </section>
 
-        <section id="how" class="timeline">
+        <section id="how" class="timeline reveal">
             <div class="container">
                 <h2 class="section-title">Как это сделано</h2>
                 <div class="timeline-list">
@@ -66,7 +75,7 @@
             </div>
         </section>
 
-        <section class="stack">
+        <section class="stack reveal">
             <div class="container">
                 <h2 class="section-title">Стек</h2>
                 <div class="stack-list">
@@ -94,7 +103,7 @@
             </div>
         </section>
 
-        <section class="tools">
+        <section class="tools reveal">
             <div class="container">
                 <h2 class="section-title">Инструменты агента</h2>
                 <ul class="tools-list">
@@ -117,9 +126,146 @@
                 </ul>
             </div>
         </section>
+
+        <section id="game" class="game reveal" aria-labelledby="game-title">
+            <div class="container">
+                <h2 id="game-title" class="section-title">Сыграй со мной в крестики-нолики</h2>
+                <p class="game-lead">Ты играешь за <strong class="symbol-x">X</strong>, бот — за <strong class="symbol-o">O</strong>. На сложном уровне его не обыграть.</p>
+
+                <div class="game-panel">
+                    <div class="game-toolbar">
+                        <div class="difficulty" role="group" aria-label="Сложность бота">
+                            <button type="button" class="difficulty-btn" data-difficulty="easy" aria-pressed="false">Легко</button>
+                            <button type="button" class="difficulty-btn" data-difficulty="hard" aria-pressed="true">Сложно</button>
+                        </div>
+                        <p class="game-score" id="game-score">
+                            <span class="score-item">Ты: <span class="score-value score-player" id="score-player">0</span></span>
+                            <span class="score-sep" aria-hidden="true">—</span>
+                            <span class="score-item">Бот: <span class="score-value score-bot" id="score-bot">0</span></span>
+                            <span class="score-sep" aria-hidden="true">—</span>
+                            <span class="score-item">Ничьи: <span class="score-value" id="score-draws">0</span></span>
+                        </p>
+                    </div>
+
+                    <div class="game-board" id="game-board" role="group" aria-label="Игровое поле, 3 на 3">
+                        <button type="button" class="game-cell" data-cell="0" aria-label="Клетка 1, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="1" aria-label="Клетка 2, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="2" aria-label="Клетка 3, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="3" aria-label="Клетка 4, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="4" aria-label="Клетка 5, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="5" aria-label="Клетка 6, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="6" aria-label="Клетка 7, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="7" aria-label="Клетка 8, пусто"></button>
+                        <button type="button" class="game-cell" data-cell="8" aria-label="Клетка 9, пусто"></button>
+                    </div>
+
+                    <p class="game-status" id="game-status" role="status" aria-live="polite">Твой ход</p>
+
+                    <div class="game-actions">
+                        <button type="button" class="game-btn game-btn-primary" id="game-restart">Сыграть ещё</button>
+                        <button type="button" class="game-btn game-btn-ghost" id="game-reset-score">Сбросить счёт</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ai-story" class="ai-story reveal" aria-labelledby="ai-story-title">
+            <div class="container">
+                <h2 id="ai-story-title" class="section-title">Как нейросеть сделала эту игру</h2>
+                <p class="story-lead">Короткая история о том, как агент OpenCode помогал собирать крестики-нолики — от промпта до финальной проверки.</p>
+
+                <ol class="story-list">
+                    <li class="story-card story-card-prompt">
+                        <span class="story-step" aria-hidden="true">01</span>
+                        <h3 class="story-title">Что попросил</h3>
+                        <p class="story-desc">Задача была сформулирована одним большим сообщением. Главное условие — двигаться по шагам и не переходить к следующему без проверки.</p>
+                        <pre class="prompt-box"><code>Сделай сайт-визитку ярче: добавь анимированный фон,
+градиенты и свечение. Затем добавь игру «Крестики-нолики»
+против бота с минимаксом, счётом и уровнями сложности.
+После неё — секцию о том, как ты помогал мне её делать.
+Только HTML, CSS и ванильный JS, без внешних библиотек.
+Работай по шагам: после каждого шага останавливайся,
+объясняй, что сделал, и жди моей проверки.</code></pre>
+                    </li>
+
+                    <li class="story-card">
+                        <span class="story-step" aria-hidden="true">02</span>
+                        <h3 class="story-title">Как агент думал</h3>
+                        <p class="story-desc">OpenCode разбил большую цель на четыре шага: дизайн-система, игра, рассказ о процессе и финальная полировка. Для каждого шага заранее определялись файлы и критерии проверки.</p>
+                    </li>
+
+                    <li class="story-card">
+                        <span class="story-step" aria-hidden="true">03</span>
+                        <h3 class="story-title">Что сломалось</h3>
+                        <p class="story-desc">Честно: минимакс легко сломать ошибкой в знаках очков, а поле на узком экране могло выйти за край. Эти места проверяли отдельно — перебором партий и замером ширины на 360 px.</p>
+                    </li>
+
+                    <li class="story-card">
+                        <span class="story-step" aria-hidden="true">04</span>
+                        <h3 class="story-title">Что получилось</h3>
+                        <p class="story-desc">Рабочая игра с непобедимым ботом на сложном уровне, счётом серии, переключателем сложности и аккуратными анимациями. А ещё — эта секция с историей процесса.</p>
+                    </li>
+
+                    <li class="story-card">
+                        <span class="story-step" aria-hidden="true">05</span>
+                        <h3 class="story-title">Что я понял про работу с ИИ</h3>
+                        <p class="story-desc">Агенту нужны чёткие шаги и проверяемые критерии. Маленькие задачи с остановкой после каждой дают предсказуемый результат — и меньше сюрпризов в конце.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="tool" class="tool reveal" aria-labelledby="tool-title">
+            <div class="container">
+                <h2 id="tool-title" class="section-title">Собери своё ТЗ для агента</h2>
+                <p class="tool-lead">Тот же формат, по которому построен этот сайт: одна цель, одна фишка и измеримый результат. Заполни поля — и получишь готовое ТЗ с бэклогом.</p>
+
+                <div class="tool-panel">
+                    <form class="tool-form" id="tz-form" novalidate>
+                        <div class="tool-field">
+                            <label class="tool-label" for="tz-what">Что хочу?</label>
+                            <input class="tool-input" id="tz-what" name="what" type="text" placeholder="Telegram-бота для учёта расходов" autocomplete="off">
+                        </div>
+
+                        <div class="tool-field">
+                            <label class="tool-label" for="tz-feature">Одна фишка</label>
+                            <input class="tool-input" id="tz-feature" name="feature" type="text" placeholder="ввод одной фразой «350 кофе»" autocomplete="off">
+                        </div>
+
+                        <div class="tool-field">
+                            <label class="tool-label" for="tz-result">Измеримый результат</label>
+                            <input class="tool-input" id="tz-result" name="result" type="text" placeholder="7 дней подряд вести траты без таблиц" autocomplete="off">
+                        </div>
+
+                        <div class="tool-field">
+                            <label class="tool-label" for="tz-term">Срок</label>
+                            <select class="tool-input tool-select" id="tz-term" name="term">
+                                <option value="4 часа">4 часа</option>
+                                <option value="1 вечер">1 вечер</option>
+                                <option value="8 часов">8 часов</option>
+                                <option value="1 день">1 день</option>
+                                <option value="2 дня">2 дня</option>
+                            </select>
+                        </div>
+                    </form>
+
+                    <div class="tool-result">
+                        <h3 class="tool-result-title">Результат</h3>
+                        <p class="tool-preview is-empty" id="tool-preview" aria-live="polite">заполни все поля, чтобы увидеть ТЗ</p>
+                    </div>
+
+                    <div class="tool-actions">
+                        <button type="button" class="tool-btn tool-btn-primary" id="tool-copy">Скопировать</button>
+                        <button type="button" class="tool-btn" id="tool-download">Скачать TZ.md</button>
+                    </div>
+
+                    <p class="tool-message" id="tool-message" role="status" aria-live="polite" hidden></p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer reveal">
         <div class="container">
             <h2 class="section-title footer-title">Контакты</h2>
             <ul class="footer-list">
@@ -139,6 +285,8 @@
         </div>
     </footer>
 
+    <script src="game.js"></script>
+    <script src="tool.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
